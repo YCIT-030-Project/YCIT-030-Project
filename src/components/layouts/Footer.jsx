@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <footer className="footer">
-        <p>Footer</p>
+        <p> 2023 </p>
       </footer>
     </StyledFooter>
   );

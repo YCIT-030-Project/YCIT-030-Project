@@ -3,6 +3,19 @@ import Card from "./Card";
 import styled from "styled-components";
 
 const StyledCards = styled.div`
+  @media only screen and (max-width: 600px) {
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 50px auto;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      flex-direction: column;
+    }
+  }
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +25,7 @@ const StyledCards = styled.div`
     width: 100%;
     max-width: 1200px;
     padding: 0 20px;
+    flex-direction: row;
   }
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -34,6 +48,17 @@ const StyledCards = styled.div`
     margin-top: 50px;
     color: gray;
     font-size: 50px;
+  }
+  .remove {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .remove:hover {
+    background-color: #e53935;
   }
 `;
 
@@ -78,7 +103,12 @@ class Cards extends React.Component {
                   tel={card.tel}
                   photo={card.photo}
                 />
-                <button onClick={() => this.props.onRemove(i)}>Remove</button>
+                <button
+                  className="remove"
+                  onClick={() => this.props.onRemove(i)}
+                >
+                  Remove
+                </button>
               </div>
             ))}
           </div>

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
+  @media (max-width: 600px) {
+    // TODO: Add styles for mobile devices
+    }
+  }
   .heroBanner {
     height: 100%;
   }
