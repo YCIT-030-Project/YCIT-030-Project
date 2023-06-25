@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #f5f5f5;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     width: 100%;
-    background-color: rgb(121, 121, 121);
-    color: white;
-    text-align: center;
+    justify-content: flex-end;
   }
 `;
 
@@ -16,7 +23,9 @@ const Footer = () => {
   return (
     <StyledFooter>
       <footer className="footer">
-        <p> 2023 </p>
+        <div>
+          <h3>Abdulrahman Al-Dukhn</h3>
+        </div>
       </footer>
     </StyledFooter>
   );
