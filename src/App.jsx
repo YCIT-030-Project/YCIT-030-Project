@@ -7,7 +7,7 @@ import Data from "./Data";
 function App() {
   return (
     <>
-      <Header />
+      <Header titles={Data().titles} />
       <NavBarCom />
       <MyApp cards={Data().cards} title={Data().title} />
       <Footer />

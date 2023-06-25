@@ -40,7 +40,7 @@ const Data = () => {
       tel: "987-654-3210",
     },
   ];
-  return { cards: cards, title: "My Cards" };
+  return { cards: cards, title: "My Cards", titles: "Home Page" };
 };
 
 export default Data;

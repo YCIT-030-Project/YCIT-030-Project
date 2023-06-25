@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.skeleton {
+  width: 10px;
+  height: 15px;
+  display: block;
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 80%
+    ),
+    lightgray;
+  background-repeat: repeat-y;
+  background-size: 50px 500px;
+  background-position: 0 0;
+  animation: shine 1s infinite;
+}
+.blur #root > div {
+  filter: blur(5px);
+  transition: all 0.2s;
+  background-color: hsla(0, 0%, 7%, 0.36);
+}
+@keyframes shine {
+  to {
+    background-position: 100% 0, 0 0;
+  }
+}

@@ -29,7 +29,7 @@ const StyledHeader = styled.header`
     gap: 10px;
   }
 `;
-const Header = () => {
+const Header = (props) => {
   return (
     <StyledHeader>
       <header className="heroBanner">
@@ -39,7 +39,7 @@ const Header = () => {
           }}
         >
           <div>
-            <h2>Home Page</h2>
+            <h2>{props.titles}</h2>
           </div>
         </div>
       </header>
