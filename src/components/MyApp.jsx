@@ -1,4 +1,5 @@
 import React from "react";
+
 import Cards from "./Cards";
 
 class MyApp extends React.Component {
@@ -10,13 +11,13 @@ class MyApp extends React.Component {
     };
   }
 
-  handleRemoveCard = (i) => {
-    const cards = [...this.state.cards];
-    cards.splice(i, 1);
+  handleRemoveCard = (id) => {
+    const cards = this.state.cards.filter((card) => card.id !== id);
     this.setState({ cards });
   };
 
   render() {
+    // console.log(this.state.cards);
     return (
       <section>
         <Cards

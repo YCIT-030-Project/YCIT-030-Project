@@ -49,7 +49,7 @@ const StyledCards = styled.div`
     color: gray;
     font-size: 50px;
   }
-  .remove {
+  button {
     background-color: #f44336;
     color: white;
     padding: 12px 20px;
@@ -57,7 +57,7 @@ const StyledCards = styled.div`
     border-radius: 10px;
     cursor: pointer;
   }
-  .remove:hover {
+  button:hover {
     background-color: #e53935;
   }
 `;
@@ -96,7 +96,7 @@ class Cards extends React.Component {
           <h1>{this.props.title}</h1>
           <div className="cards">
             {this.state.cards.map((card, i) => (
-              <div key={i} className="card">
+              <div key={card.id} className="card">
                 <Card
                   name={card.name}
                   email={card.email}
@@ -104,8 +104,9 @@ class Cards extends React.Component {
                   photo={card.photo}
                 />
                 <button
-                  className="remove"
-                  onClick={() => this.props.onRemove(i)}
+                  onClick={() => {
+                    this.props.onRemove(card.id);
+                  }}
                 >
                   Remove
                 </button>
