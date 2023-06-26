@@ -3,28 +3,29 @@ import styled from "styled-components";
 
 import Cards from "./Cards";
 
-const StyledResetButton = styled.section`
-display: flex;
-justify-content: center;
-button {
-  background-color: green;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2rem;
+{
+  /*const StyledResetButton = styled.section`
+  display: flex;
+  justify-content: center;
+  button {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+`;*/
 }
-}
-`;
 class MyApp extends React.Component {
   constructor(props) {
     super(props);
-    const savedCards = JSON.parse(localStorage.getItem("cards"));
+    // const localStorageCards = JSON.parse(localStorage.getItem("cards"));
     this.state = {
-      cards: savedCards || props.cards,
+      cards: props.cards,
       title: props.title,
     };
   }
@@ -32,7 +33,8 @@ class MyApp extends React.Component {
   handleRemoveCard = (id) => {
     const cards = this.state.cards.filter((card) => card.id !== id);
     this.setState({ cards }, () => {
-      localStorage.setItem("cards", JSON.stringify(cards));
+      // localStorage.setItem("cards", JSON.stringify(cards));
+      this.setState({ cards });
     });
   };
 
@@ -45,8 +47,8 @@ class MyApp extends React.Component {
           title={this.state.title}
           onRemove={this.handleRemoveCard}
         />
-        <StyledResetButton>
-          <button
+        {/*<StyledResetButton>
+           <button
             onClick={() => {
               this.setState({ cards: this.props.cards }, () => {
                 localStorage.removeItem("cards");
@@ -54,8 +56,8 @@ class MyApp extends React.Component {
             }}
           >
             Reset
-          </button>
-        </StyledResetButton>
+          </button> 
+        </StyledResetButton>*/}
       </section>
     );
   }

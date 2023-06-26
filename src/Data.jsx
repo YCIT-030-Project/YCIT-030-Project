@@ -9,14 +9,14 @@ const Data = () => {
     },
     {
       id: 1,
-      name: "Juan",
-      email: "Juan@example.com",
+      name: "SomeOne",
+      email: "SomeOne@example.com",
       tel: "055-555-5555",
     },
     {
       id: 2,
-      name: "Magda",
-      email: "Magda@example.com",
+      name: "OtherOne",
+      email: "OtherOne@example.com",
       tel: "555-555-5555",
     },
     {

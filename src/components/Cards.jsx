@@ -29,8 +29,7 @@ const StyledCards = styled.div`
     text-align: center;
   }
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 300px;
     margin: 20px;
   }
@@ -96,12 +95,12 @@ class Cards extends React.Component {
         <div>
           <h1>{this.props.title}</h1>
           <div className="cards">
-            {this.state.cards.map((card, i) => (
+            {this.state.cards.map((card) => (
               <div key={card.id} className="card">
                 <Card
-                  name={card.name}
-                  email={card.email}
-                  tel={card.tel}
+                  name={`Name: ${card.name}`}
+                  email={`Email: ${card.email}`}
+                  tel={`Tel: ${card.tel}`}
                   photo={card.photo}
                 />
                 <button
